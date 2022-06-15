@@ -1,8 +1,6 @@
 function losuj(a, b) {
     a = Math.ceil(a);
     b = Math.floor(b);
-    Math.floor(Math.random() * b + a)
-
     return Math.floor(Math.random() * b + a)
 };
 
