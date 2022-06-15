@@ -8,18 +8,24 @@ function losuj(a, b) {
 
 function losujAlfa(n) {
     var r = "";
-    while (n--) r += String.fromCharCode((r = Math.random() * 62 | 0, r += r > 9 ? (r < 36 ? 55 : 61) : 48));
+
+    while (n--) {
+    r += String.fromCharCode((r = Math.random() * 64, r += r > 9 || 91<r<96 ? (r < 47 ? 57 : 65) : 48));
+    }
 
     return r;
 }
 
 function losujMinMax(min, max, z) {
-        for (let n = 1; n < z; n++) {
+    let tab = new Array(z);
+    
+        for (let n = 0; n < z; n++) {
         min[n] = Math.ceil(min);
         max[n] = Math.floor(max);
-        console.log(Math.floor(Math.random() * max  + min));
+        tab[n] = (Math.floor(Math.random() * (max-min+1)  + min));
+        
     }
-    return Math.floor(Math.random() * max  + min)
+    return tab;
 };
 
 module.exports = {
